@@ -13,11 +13,12 @@
   <script type="text/javascript">
     var imageCount = 1;
     var total = 7;
+    var time;
 
     (function slide() {
       var Image = document.getElementById('img');
       imageCount = imageCount + 1;
-      var time;
+      var time = time;
       if (imageCount > total) {
         imageCount = 1;
         time = 1000;
