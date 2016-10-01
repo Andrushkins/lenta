@@ -4,16 +4,23 @@
   <meta charset="UTF-8">
 </head>
 <body>
-  <div class="slider" id="slider" width="100%" height="250px" style="max-width: 950px;">
-    <img src="https://raw.githubusercontent.com/Andrushkins/images/master/lenta/970%D1%85250%201.jpg" id="img" width="100%">
-  </div>
+  <iframe id="AdFox_iframe_[rnd]" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="width: 100%; height: 250px; display: block; margin: 0px auto;">
+  </iframe>
   <script type="text/javascript">
     var imageCount = 1;
     var total = 7;
     var time;
+    var _iframe = document.getElementById('AdFox_iframe_[rnd]');
+
+    document.getElementById('AdFox_iframe_[rnd]').contentWindow.document.body.innerHTML =
+    '\
+      <div class="slider" id="slider" width="100%" height="250px" style="max-width: 950;">\
+        <img src="https://raw.githubusercontent.com/Andrushkins/images/master/lenta/970%D1%85250%201.jpg" id="img" width="100%" id="img" width="100%">\
+      </div>\
+    ';
 
     (function slide() {
-      var Image = document.getElementById('img');
+      var Image = _iframe.contentWindow.document.getElementById('img');
       imageCount = imageCount + 1;
       var time = time;
       if (imageCount > total) {
