@@ -4,18 +4,16 @@
   </a>
 </div>
 <script type="text/javascript">
-  var imageCount = 1;
-  var total = 7;
-  var time;
+  var imageCount = 0;
+  var total = [0, 1, 2, 3, 4, 5, 6];
+  var Image = document.getElementById('img');
 
   (function slide() {
-    var Image = document.getElementById('img');
     imageCount = imageCount + 1;
-    var time = time;
-    if (imageCount > total) {
+    var time = 750;
+    if (imageCount > total.length) {
       imageCount = 1;
-      time = 750;
-    } else {
+    } else if (imageCount < total.length + 1 && imageCount != 1) {
       time = 1500;
     }
     Image.src = "https://raw.githubusercontent.com/Andrushkins/images/master/lenta/970%D1%85250%20" + imageCount + ".jpg";
